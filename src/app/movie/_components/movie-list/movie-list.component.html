@@ -1,0 +1,43 @@
+<body><div style="background-color: #243b55">
+<div id="logo">
+  <div id="logo_text" style="margin-left: 5%;">
+    <!-- class="logo_colour", allows you to change the colour of the text -->
+    <h1 style="font-family:Rockwell Condensed,serif;font-size: 3em"><a href="/movie/list">Build A Vision</a></h1>
+    <h2 class="typewriter" style="font-size: small">“You is kind. You is smart. You is important.”</h2>
+  </div>
+</div>
+<div id="menubar">
+  <ul id="menu" >
+    <div style="margin-left: 40%">
+    <li class="selected" ><a  href="/movie/list">Latest Series</a></li>
+    <li><a href="/movie-my-list">My List</a></li>
+    </div>
+  </ul>
+</div>
+  <br>
+</div>
+<div style="background: linear-gradient(#141e30, #243b55)">
+<div style="margin: auto; width: 95%;">
+<div class="header"> Latest Series</div>
+<div class="section">
+  <mat-grid-list cols="4" style="height:100%">
+
+  <ng-container  style="text-align: center" *ngFor="let items of movieList">
+    <mat-grid-tile>
+    <div class="box" style="height: 350px">
+      <span *ngIf="items.show.image"> <a class="transparent" style="z-index: -1" (click)="navigateToMovieDetails(items.show.id)"> <img src="{{items.show.image.medium}}" alt="Image"> </a> </span>
+      <span style="color: yellow; text-shadow: 3px 3px 8px black;margin-right: 15%; font-size: 16px"  *ngIf="items.show.rating.average"> <i> {{items.show.rating.average}}</i> &#9733;</span><br>
+      <div class="box1" >
+      <span *ngIf="items.show.name"><b>  "{{items.show.name}}" </b> </span><br>
+      <span *ngIf="items.airdate" style="color: skyblue; font-size: 13px"><i> Released On:</i> {{items.airdate}}</span><br>
+
+      </div>
+    </div>
+    </mat-grid-tile>
+  </ng-container>
+
+  </mat-grid-list>
+</div>
+</div><br>
+</div>
+</body>

@@ -1,0 +1,44 @@
+<body><div style="background-color: #243b55; margin: auto">
+  <div id="logo">
+    <div id="logo_text" style="margin-left: 5%;">
+      <!-- class="logo_colour", allows you to change the colour of the text -->
+      <h1 style="font-family:Rockwell Condensed,serif;font-size: 3em"><a href="/movie/list">Build A Vision</a></h1>
+      <h2 class="typewriter" style="font-size: small">“You is kind. You is smart. You is important.”</h2>
+    </div>
+  </div>
+  <div id="menubar">
+    <ul id="menu" >
+      <div style="margin-left: 40%">
+        <li class="selected" ><a  href="/movie/list">Latest Series</a></li>
+        <li><a href="/movie-my-list">My List</a></li>
+      </div>
+    </ul>
+  </div>
+  <br>
+</div>
+
+<div style="background: linear-gradient(#141e30, #243b55)">
+<div style="margin: auto; width: 95%;">
+  <div class="header">Movie Details
+    <br><br><br>
+    <button type="button" class="button" (click)="saveToMyList()"
+            style=" width: 13%;font-size:medium">
+      Add to My List
+    </button>
+  </div>
+  <div style="display: flex; width: 50%; margin: auto; background-color: #141e30; height: 100%; padding: 3% 3% 3% 3%;">
+  <span style="padding-right: 50px"><img src="{{chosenMovie.image.medium}}" alt="Image"></span><br>
+    <span style=" font-size: medium;color: whitesmoke;text-align: justify">
+     <p style="font-family:Rockwell Condensed,serif; font-size: xx-large; color: dodgerblue">
+       {{chosenMovie.name}}</p><br>
+      <span [innerHTML]="chosenMovie.summary" style="text-align: justify"> </span>
+      <br><br><br><span>
+      <b style="color: dodgerblue"> Genres:&emsp;</b>
+      <span  *ngFor="let items of chosenMovie.genres">
+        <span>{{items}}&emsp;</span>
+      </span></span>
+   </span>
+  </div><br><br>
+</div>
+</div>
+</body>
