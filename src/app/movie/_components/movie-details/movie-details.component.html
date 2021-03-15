@@ -31,8 +31,11 @@
     <span style=" font-size: medium;color: whitesmoke;text-align: justify">
      <p style="font-family:Rockwell Condensed,serif; font-size: xx-large; color: dodgerblue">
        {{chosenMovie.name}}</p><br>
-      <span [innerHTML]="chosenMovie.summary" style="text-align: justify"> </span>
-      <br><br><br><span>
+      <span [innerHTML]="chosenMovie.summary" style="text-align: justify">  </span>
+      <br>
+      <span><a style="color: #00C5EE; text-align: left" href="{{chosenMovie.url}}" target="_blank">Visit Website</a></span><br>
+      <span>
+      <br><br>
       <b style="color: dodgerblue"> Genres:&emsp;</b>
       <span  *ngFor="let items of chosenMovie.genres">
         <span>{{items}}&emsp;</span>
